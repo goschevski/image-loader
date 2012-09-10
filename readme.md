@@ -5,36 +5,42 @@ Image loader is jQuery plugin that loads image selected by input file field with
 ##Options
 
 * `target:` Element in which we load selected image
-	
-	*Default: $('.show')*
 
 * `width:` Resize image to custom width
 
-	*Default: auto*
-
 * `height:` Resize image to custom height
 
-	*Default: auto*
+* `callback` - callback function
 
 **Note:** If you use just width or just height, the second dimension is gonna be scaled proportionaly.
 
-##Example
+Example:
 
-HTML
-
-	<input type="file" class="image">
-	<div class="show"></div>
-	
-	<input type="file" class="image2">
-	<div class="second"></div>
-	
-Script Initilization
-
-	$('.image').imageLoader();
-	
-	$('.image2').imageLoader({
-		'target' : $('.second'),
-		'width' : '100px'
+	$('.file').imageLoader({
+		'target': $('.display'),
+		'width': '100px',
+		callback: function () {
+			console.log('done');
+		}
 	});
+
+##Methods
+* `remove` - removes image added by image loader
+
+Example:
+
+	$('.show').imageLoader('remove');
+
+##Defaults
+
+`target:` $('show'),
+
+`width:` auto,
+
+`height:` auto,
+
+callback: function () {
+	// This is callback function
+}
 	
 Check [live example](http://salencebg.github.com/image-loader).
