@@ -13,7 +13,7 @@
 
 	// Default options
 	var settings = {
-			'target' : $('.show'),
+			'show' : $('.show'),
 			'width' : 'auto',
 			'height' : 'auto',
 			callback: function () {
@@ -35,7 +35,7 @@
 							reader.onload = (function(theFile) {
 
 								return function(e) {
-									settings.target.html('<img src="'+e.target.result+'" width="'+settings.width+'" height="'+settings.height+'" class="img-load" />');
+									settings.show.html('<img src="'+e.target.result+'" width="'+settings.width+'" height="'+settings.height+'" class="img-load" />');
 								};
 
 							})(this.files[0]);
@@ -55,6 +55,34 @@
 				return this.each(function () {
 					$(this).find('.img-load').remove();
 				});
+			},
+
+			cssBackground: function (options) {
+				$.extend(settings, options);
+
+				if (window.File && window.FileReader && window.FileList && window.Blob) {
+					return this.each(function () {
+						$(this).change(function () {
+							var reader = new FileReader();
+
+							// Closure to capture the file information.
+							reader.onload = (function(theFile) {
+
+								return function(e) {
+									settings.show.css('backgroundImage', 'url('+e.target.result+')');
+								};
+
+							})(this.files[0]);
+
+							// Read in the image file as a data URL.
+							reader.readAsDataURL(this.files[0]);
+
+							settings.callback();
+						});
+					});
+				} else {
+					$(this).after('<small>This browser doesn\'t support image loader.</small>');
+				}
 			}
 
 		};

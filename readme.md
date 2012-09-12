@@ -4,7 +4,7 @@ Image loader is jQuery plugin that loads image selected by input file field with
 
 ##Options
 
-* `target:` Element in which we load selected image
+* `show:` Element in which we load selected image
 
 * `width:` Resize image to custom width
 
@@ -12,12 +12,12 @@ Image loader is jQuery plugin that loads image selected by input file field with
 
 * `callback` - callback function
 
-**Note:** If you use just width or just height, the second dimension is gonna be scaled proportionaly.
+**Note:** Width and height options applies only for init method, not for cssBackground and if you use just one, the second dimension is gonna be scaled proportionaly.
 
 Example:
 
 	$('.file').imageLoader({
-		'target': $('.display'),
+		'show': $('.display'),
 		'width': '100px',
 		callback: function () {
 			console.log('done');
@@ -26,6 +26,7 @@ Example:
 
 ##Methods
 * `remove` - removes image added by image loader
+* `cssBackground` - load image as css background
 
 Example:
 
@@ -33,7 +34,7 @@ Example:
 
 ##Defaults
 
-`target:` $('show'),
+`show:` $('.show'),
 
 `width:` auto,
 
