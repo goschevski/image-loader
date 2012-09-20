@@ -17,9 +17,10 @@
 
     this.$element = $(element);
     var o = this.options = $.extend({}, $.fn.imageLoader, options);
+    this.$input = this.$('input:file');
     this.$placeholder = $( o.show );
 
-    this.$element.on('change', $.proxy(this._onChange, this));
+    this.$input.on('change.' + namespace, $.proxy(this._onChange, this));
   }
 
   ImageLoader.prototype = {
@@ -28,6 +29,7 @@
     },
     _onChange: function(e) {
       this._reader( e.currentTarget );
+      console.log( arguments );
     },
     remove: function() {
       if ( this.options.cssBackground ) {
@@ -68,7 +70,7 @@
         data = $this.data(namespace),
         options = typeof option === 'object' && option;
 
-      if ( !!data ) {
+      if ( !data ) {
         $this.data(namespace, (data = new ImageLoader(this, options)));
       }
       if ( typeof option === 'string' && option.charAt(0) !== '_') {

@@ -1,9 +1,8 @@
 /*--------------------------------------
  * Image Loader Init
 ---------------------------------------*/
-
-$(function () {
-	$('.bg-image').imageLoader({
-		'show': $('.pass')
+$(document).ready(function () {
+	$('#bg-image').imageLoader({
+		'show': '.pass'
 	});
 });
