@@ -1,13 +1,6 @@
-/*
- * imageLoader.js - 0.1
- * Friday, Sep 7 2012
- *
- * Copyright (c) 2012, Aleksandar Gosevski
- * https://github.com/salencebg/image-loader
- *
- * Licensed under the MIT license,
- * http://www.opensource.org/licenses/MIT
- */
+/*! Image Loader - v0.1.0 - 2012-09-28
+* https://github.com/salencebg/image-loader
+* Copyright (c) 2012 Ivan Tatic & Aleksandar Gosevski; Licensed MIT, GPL */
 
 (function($) {
   var namespace = 'imageloader';
