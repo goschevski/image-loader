@@ -30,13 +30,6 @@
     _onChange: function(e) {
       this._reader( e.currentTarget );
     },
-    remove: function() {
-      if ( this.options.cssBackground ) {
-        this.$placeholder.css({ backgroundImage: ''});
-      } else {
-        this.$placeholder.empty();
-      }
-    },
     _reader: function( uploader ) {
       var reader = new FileReader(),
         self = this,
