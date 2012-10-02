@@ -2,7 +2,11 @@
  * Image Loader Init
 ---------------------------------------*/
 $(document).ready(function () {
-	$('#bg-image').imageLoader({
+	$('.fajl').imageLoader({
 		'show': '.pass'
+	});
+
+	$('.fajl2').imageLoader({
+		'show': '.passs'
 	});
 });

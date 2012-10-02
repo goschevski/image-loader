@@ -17,10 +17,9 @@
 
     this.$element = $(element);
     var o = this.options = $.extend({}, $.fn.imageLoader.defaults, options);
-    this.$input = this.$('input:file');
     this.$placeholder = $( o.show );
 
-    this.$input.on('change.' + namespace, $.proxy(this._onChange, this));
+    this.$element.on('change.' + namespace, $.proxy(this._onChange, this));
   }
 
   ImageLoader.prototype = {

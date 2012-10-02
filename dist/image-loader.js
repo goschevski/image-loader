@@ -1,4 +1,4 @@
-/*! Image Loader - v0.1.0 - 2012-09-28
+/*! Image Loader - v0.1.0 - 2012-10-02
 * https://github.com/salencebg/image-loader
 * Copyright (c) 2012 Ivan Tatic & Aleksandar Gosevski; Licensed MIT, GPL */
 
@@ -10,10 +10,9 @@
 
     this.$element = $(element);
     var o = this.options = $.extend({}, $.fn.imageLoader.defaults, options);
-    this.$input = this.$('input:file');
     this.$placeholder = $( o.show );
 
-    this.$input.on('change.' + namespace, $.proxy(this._onChange, this));
+    this.$element.on('change.' + namespace, $.proxy(this._onChange, this));
   }
 
   ImageLoader.prototype = {
