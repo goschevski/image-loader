@@ -3,6 +3,8 @@
 Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.
 
 ## Documentation
+### Download
+Download [minified](https://raw.github.com/salencebg/image-loader/master/dist/image-loader.min.js) version of plugin for faster loading.
 ### Instalation
 Include the plugin after jQuery on the page.
 
