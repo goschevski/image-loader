@@ -18,6 +18,8 @@ Include the plugin after jQuery on the page.
 
 ```cssBackground: false``` - If you want to add image as background of `show` selector, set this option to true
 
+```method: 'html'``` - jQuery method that will be used to add image (html (default) or append)
+
 ```callback: null``` - If you want to make something happen after loading image, callback is function for that
 
 ### Examples

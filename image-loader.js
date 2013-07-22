@@ -42,7 +42,7 @@
     },
     _setImage: function(e) {
       var o = this.options;
-      return this.$placeholder.append('<img src="' + e.target.result + '" width="' + o.width + '" height="' + o.height + '" class="' + o.imgClass + '" />');
+      return this.$placeholder[o.method]('<img src="' + e.target.result + '" width="' + o.width + '" height="' + o.height + '" class="' + o.imgClass + '" />');
     },
     _setBackground: function(e) {
       return this.$placeholder.css({ backgroundImage: 'url(' + e.target.result + ')' });
@@ -74,6 +74,7 @@
     height: 'auto',
     imgClass: 'img-load',
     cssBackground: false,
+    method: 'html',
     callback: null
   };
 }(jQuery));
