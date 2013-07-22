@@ -1,6 +1,10 @@
-/*! Image Loader - v0.1.0 - 2012-10-02
-* https://github.com/salencebg/image-loader
-* Copyright (c) 2012 Ivan Tatic & Aleksandar Gosevski; Licensed MIT, GPL */
+/*
+ * image-loader
+ * https://github.com/salencebg/image-loader
+ *
+ * Copyright (c) 2013 Aleksandar Gosevski
+ * Licensed under the MIT license.
+ */
 
 (function($) {
   var namespace = 'imageloader';

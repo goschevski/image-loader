@@ -1,18 +1,30 @@
-<html>
-<head>
-	<title></title>
-</head>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+
+		<title>Image Loader</title>
+		<meta name="description" content="Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.">
+	</head>
 <body>
 
-<input type="file" class="fajl">
-<div class="pass">dasdsadsadas</div>
+<input type="file" name="file" class="file">
 
-<input type="file" class="fajl2">
-<div class="passs"></div>
+<section class="show"></section>
 
-<script src="../libs/jquery/jquery.js"></script>
-<script src="../dist/image-loader.min.js"></script>
-<script src="init.js"></script>
 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="../image-loader.js"></script>
+<script>
+	$(function () {
+		$('.file').imageLoader();
+	});
+</script>
 </body>
 </html>
