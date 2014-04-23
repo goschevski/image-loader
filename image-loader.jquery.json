@@ -1,0 +1,27 @@
+{
+  "name": "image-loader",
+  "title": "jQuery plugin",
+  "description": "Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/goschevski/image-loader",
+  "author": {
+    "name": "Aleksandar Gosevski",
+    "email": "gosevskibg@gmail.com",
+    "url": "https://github.com/goschevski"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:goschevski/image-loader.git"
+  },
+  "bugs": "https://github.com/goschevski/image-loader/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/goschevski/image-loader/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}

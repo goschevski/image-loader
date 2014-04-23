@@ -1,8 +1,8 @@
 /*
  * image-loader
- * https://github.com/salencebg/image-loader
+ * https://github.com/goschevski/image-loader
  *
- * Copyright (c) 2013 Aleksandar Gosevski
+ * Copyright (c) 2014 Aleksandar Gosevski
  * Licensed under the MIT license.
  */
 
