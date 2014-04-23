@@ -3,14 +3,14 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify');
 
-var source = './src/jquery.image-loader.js';
+var source = './src/image-loader.js';
 
 gulp.task('js', function () {
     return gulp.src(source)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(uglify())
-        .pipe(rename('jquery.image-loader.min.js'))
+        .pipe(rename('image-loader.min.js'))
         .pipe(gulp.dest('./dist'))
 });
 

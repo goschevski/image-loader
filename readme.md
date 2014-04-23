@@ -1,6 +1,6 @@
 # Image loader
 
-Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.
+Image loader is plugin that loads image selected by input file field without uploading it on server.
 
 ##### Demo
 Demo available [here](http://goschevski.github.io/image-loader/).
@@ -8,13 +8,12 @@ Demo available [here](http://goschevski.github.io/image-loader/).
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.githubusercontent.com/goschevski/image-loader/master/dist/jquery.image-loader.min.js
-[max]: https://raw.githubusercontent.com/goschevski/image-loader/master/src/jquery.image-loader.js
+[min]: https://raw.githubusercontent.com/goschevski/image-loader/master/dist/image-loader.min.js
+[max]: https://raw.githubusercontent.com/goschevski/image-loader/master/src/image-loader.js
 
 In your web page:
 
 ```html
-<script src="jquery.js"></script>
 <script src="dist/image-loader.min.js"></script>
 ```
 
@@ -36,7 +35,7 @@ In your web page:
 
 ```js
 $(function () {
-  $('input[type="file"]').imageLoader({
+  var loader = new ImageLoader('input[type="file"]', {
     placeholder: '.holder',
     width: '200px',
     imgClass: 'my-custom-class',
