@@ -1,4 +1,4 @@
-# jQuery plugin
+# Image loader
 
 Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.
 
