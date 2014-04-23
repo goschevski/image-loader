@@ -3,28 +3,26 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		<meta name="viewport" content="width=device-width">
+<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
 
-		<title>Image Loader</title>
-		<meta name="description" content="Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.">
-	</head>
+    <title>Image Loader</title>
+    <meta name="description" content="Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.">
+  </head>
 <body>
 
 <input type="file" name="file" class="file">
 
 <section class="show"></section>
-
-
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="../image-loader.js"></script>
+<script src="../libs/jquery/jquery.js"></script>
+<script src="../dist/jquery.image-loader.js"></script>
 <script>
-	$(function () {
-		$('.file').imageLoader();
-	});
+  $(function () {
+    $('.file').imageLoader();
+  });
 </script>
 </body>
 </html>
