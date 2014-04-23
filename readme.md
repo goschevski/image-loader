@@ -6,7 +6,7 @@ Image loader is jQuery plugin that loads image selected by input file field with
 Download the [production version][min] or the [development version][max].
 
 [min]: https://raw.githubusercontent.com/goschevski/image-loader/master/dist/jquery.image-loader.min.js
-[max]: https://raw.githubusercontent.com/goschevski/image-loader/master/dist/jquery.image-loader.js
+[max]: https://raw.githubusercontent.com/goschevski/image-loader/master/src/jquery.image-loader.js
 
 In your web page:
 
