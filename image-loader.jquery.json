@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "homepage": "https://github.com/goschevski/image-loader",
   "author": {
-    "name": "Aleksandar Gosevski",
+    "name": "Aleksandar Goševski",
     "email": "gosevskibg@gmail.com",
     "url": "https://github.com/goschevski"
   },
@@ -23,5 +23,5 @@
   "dependencies": {
     "jquery": "*"
   },
-  "keywords": []
+  "keywords": ["image", "datauri", "image loader"]
 }

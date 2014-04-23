@@ -7,74 +7,90 @@
  */
 
 (function($) {
-  var namespace = 'imageloader';
+    var namespace = 'imageloader';
 
-  function ImageLoader(element, options) {
-    if ( !this.isSupported ) { throw 'Older browesers are not supported.'; }
+    function ImageLoader (element, options) {
+        if ( !this.isSupported ) { throw new Error('Older browsers are not supported.'); }
 
-    this.$element = $(element);
-    var o = this.options = $.extend({}, $.fn.imageLoader.defaults, options);
-    this.$placeholder = $( o.show );
+        this.setElements(element, options);
+        this.bindEvents();
+    }
 
-    this.$element.on('change.' + namespace, $.proxy(this._onChange, this));
-  }
+    ImageLoader.prototype = {
+        $: function (selector) {
+            return this.$element.find(selector);
+        },
 
-  ImageLoader.prototype = {
-    $: function (selector) {
-      return this.$element.find(selector);
-    },
-    _onChange: function(e) {
-      this._reader( e.currentTarget );
-    },
-    _reader: function( uploader ) {
-      var reader = new FileReader(),
-        self = this,
-        o = this.options;
+        isSupported: function () {
+            return window.File && window.FileReader && window.FileList && window.Blob;
+        },
 
-      reader.onload = (function(file) {
-        return $.proxy(  self[ o.cssBackground ? '_setBackground' : '_setImage' ], self);
-      }(uploader.files[0]));
-      reader.readAsDataURL(uploader.files[0]);
+        setElements: function (element, options) {
+            this.options = $.extend({}, $.fn.imageLoader.defaults, options);
+            this.$element = $(element);
+            this.$placeholder = $( this.options.placeholder );
+        },
 
-      if ( $.isFunction(o.callback) ) {
-        o.callback();
-      }
-    },
-    _setImage: function(e) {
-      var o = this.options;
-      return this.$placeholder[o.method]('<img src="' + e.target.result + '" width="' + o.width + '" height="' + o.height + '" class="' + o.imgClass + '" />');
-    },
-    _setBackground: function(e) {
-      return this.$placeholder.css({ backgroundImage: 'url(' + e.target.result + ')' });
-    },
-    isSupported: (function() {
-      return window.File && window.FileReader && window.FileList && window.Blob;
-    }())
-  };
+        bindEvents: function () {
+            this.$element.on('change.' + namespace, $.proxy( this.reader, this ));
+        },
 
-  $.fn.imageLoader = function (option) {
-    return this.each(function () {
-      var $this = $(this),
-        data = $this.data(namespace),
-        options = typeof option === 'object' && option;
+        reader: function (e) {
+            var uploader = e.currentTarget,
+                reader = new FileReader(),
+                self = this,
+                o = this.options;
 
-      if ( !data ) {
-        $this.data(namespace, (data = new ImageLoader(this, options)));
-      }
-      if ( typeof option === 'string' && option.charAt(0) !== '_') {
-        data[option]();
-      }
-    });
-  };
+            reader.onload = (function (file) {
+                return $.proxy(  self[ o.method === 'css' ? 'setBackground' : 'setImage' ], self);
+            }(uploader.files[0]));
 
-  $.fn.imageLoader.Constructor = ImageLoader;
-  $.fn.imageLoader.defaults = {
-    show: '.show',
-    width: 'auto',
-    height: 'auto',
-    imgClass: 'img-load',
-    cssBackground: false,
-    method: 'html',
-    callback: null
-  };
+            reader.readAsDataURL( uploader.files[0] );
+
+            // If callback is function, execute it
+            if ( $.isFunction(o.callback) ) {
+                o.callback();
+            }
+        },
+
+        setImage: function (e) {
+            var o = this.options;
+
+            // Prevent using custom methods
+            if ( o.method !== 'html' && o.method !== 'append' ) {
+                throw new Error('Only html and append methods are allowed!');
+            }
+
+            return this.$placeholder[o.method]('<img src="' + e.target.result + '" width="' + o.width + '" height="' + o.height + '" class="' + o.imgClass + '" />');
+        },
+
+        setBackground: function (e) {
+            return this.$placeholder.css({ backgroundImage: 'url(' + e.target.result + ')' });
+        }
+    };
+
+    $.fn.imageLoader = function (option) {
+        return this.each(function () {
+            var $this = $(this),
+                data = $this.data(namespace),
+                options = typeof option === 'object' && option;
+
+            if ( !data ) {
+                $this.data(namespace, (data = new ImageLoader(this, options)));
+            }
+            if ( typeof option === 'string' && option.charAt(0) !== '_') {
+                data[option]();
+            }
+        });
+    };
+
+    $.fn.imageLoader.Constructor = ImageLoader;
+    $.fn.imageLoader.defaults = {
+        placeholder: '.image-placeholder',
+        width: 'auto',
+        height: 'auto',
+        imgClass: 'img-load',
+        method: 'html',
+        callback: null
+    };
 }(jQuery));

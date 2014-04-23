@@ -15,11 +15,9 @@ In your web page:
 <script src="dist/image-loader.min.js"></script>
 ```
 
-
-
 ## Options and defaults
 
-```show: '.show'``` - Selector in which image will be loaded
+```placeholder: '.image-placeholder'``` - Selector in which image will be loaded
 
 ```width: auto``` - Width of loaded image
 
@@ -27,9 +25,7 @@ In your web page:
 
 ```imgClass: 'img-load'``` - Class that will be added to loaded image
 
-```cssBackground: false``` - If you want to add image as background of `show` selector, set this option to true
-
-```method: 'html'``` - jQuery method that will be used to add image (html (default) or append)
+```method: 'html'``` - Method that will be used to add image (html (default), append or css which will add image as background of placeholder)
 
 ```callback: null``` - If you want to make something happen after loading image, callback is function for that
 
@@ -38,7 +34,7 @@ In your web page:
 ```js
 $(function () {
   $('input[type="file"]').imageLoader({
-    'show': '.holder',
+    'placeholder': '.holder',
     'width': '200px',
     'imgClass': 'my-custom-class',
     callback: function () {
@@ -47,6 +43,8 @@ $(function () {
   });
 });
 ```
+
 ### License
-Copyright (c) 2013 Ivan Tatic & Aleksandar Gosevski
+
+Copyright (c) 2014 Aleksandar Goševski
 Licensed under the MIT, GPL licenses.

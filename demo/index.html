@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+
+        <title>Image Loader</title>
+        <meta name="description" content="Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.">
+        <!-- Just for demo if you are testing css method -->
+        <style>
+            .image-placeholder { margin-top: 50px; min-width: 300px; min-height: 300px; }
+        </style>
+    </head>
+
+    <body>
+        <input type="file" name="file" class="file">
+
+        <section class="image-placeholder">
+            This is where image will be loaded!
+        </section>
+
+        <!-- JavaScript -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="../dist/jquery.image-loader.min.js"></script>
+
+        <script>
+            $(function () {
+                $('.file').imageLoader({ method: 'append' });
+            });
+        </script>
+    </body>
+</html>
