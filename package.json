@@ -1,6 +1,6 @@
 {
   "name": "image-loader",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
