@@ -34,9 +34,9 @@ In your web page:
 ```js
 $(function () {
   $('input[type="file"]').imageLoader({
-    'placeholder': '.holder',
-    'width': '200px',
-    'imgClass': 'my-custom-class',
+    placeholder: '.holder',
+    width: '200px',
+    imgClass: 'my-custom-class',
     callback: function () {
       console.log('image added to .holder');
     }
