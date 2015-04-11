@@ -2,21 +2,6 @@
 
 Image loader is plugin that loads image selected by input file field without uploading it on server.
 
-##### Demo
-Demo available [here](http://goschevski.github.io/image-loader/).
-
-## Getting Started
-Download the [production version][min] or the [development version][max].
-
-[min]: https://raw.githubusercontent.com/goschevski/image-loader/master/dist/image-loader.min.js
-[max]: https://raw.githubusercontent.com/goschevski/image-loader/master/src/image-loader.js
-
-In your web page:
-
-```html
-<script src="dist/image-loader.min.js"></script>
-```
-
 ## Options and defaults
 
 ```placeholder: '.image-placeholder'``` - Selector in which image will be loaded
@@ -48,5 +33,4 @@ $(function () {
 
 ### License
 
-Copyright (c) 2014 Aleksandar Goševski
-Licensed under the MIT, GPL licenses.
+Copyright (c) Aleksandar Goševski
